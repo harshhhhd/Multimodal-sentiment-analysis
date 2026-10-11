@@ -1,0 +1,35 @@
+# IndicSent-M project configuration
+
+data:
+  raw_csv: "data/raw/labels_template.csv"       # fill in text + sentiment, then point here
+  image_dir: "data/raw/valImages"                # your uploaded image folder
+  raw_csv: "data/raw/english_meme_labels.csv"
+  image_dir: "data/raw/english_meme/images"
+  processed_dir: "data/processed"
+  text_column: "text_corrected"                 # column name holding meme text (adjust to your CSV)
+  image_column: "image_name"                    # column name holding image filename
+  label_column: "overall_sentiment"             # column name holding sentiment label
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+  random_seed: 42
+
+text_model:
+  name: "ai4bharat/indic-bert"                  # IndicBERT checkpoint
+  max_length: 128
+
+image_model:
+  name: "google/vit-base-patch16-224"           # ViT checkpoint
+  image_size: 224
+
+training:
+  batch_size: 16
+  epochs: 10
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  device: "cuda"                                # falls back to cpu automatically if unavailable
+  checkpoint_dir: "checkpoints"
+  log_every_n_steps: 10
+
+labels:
+  classes: ["negative", "neutral", "positive"]
