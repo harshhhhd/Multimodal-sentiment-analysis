@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IndicSent-M
 
 Multimodal sentiment analysis for Indian-language memes using IndicBERT (text) and ViT (image) with attention-based fusion. Classifies Positive/Neutral/Negative with explainable predictions.
@@ -84,3 +85,7 @@ python -m src.evaluate --fusion_type text_only --checkpoint checkpoints/best_tex
 - Run each module's `if __name__ == "__main__":` block directly (e.g. `python -m src.models.text_encoder`) to smoke-test it in isolation before running full training.
 - `configs/config.yaml` is the single place to change hyperparameters, paths, and model checkpoints.
 - Explainability (Grad-CAM for image, attention/LIME for text) is planned as a follow-up module (`src/explain.py`) once baselines are working.
+=======
+# Multimodal-sentiment-analysis
+Multimodal sentiment analysis for Indian-language memes using IndicBERT (text) and ViT (image) with attention-based fusion. Classifies Positive/Neutral/Negative with explainable predictions.
+>>>>>>> 509ee8d7cb078cc18fcdb55c6cff0522e8dd7e83

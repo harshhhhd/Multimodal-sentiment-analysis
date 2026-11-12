@@ -1,0 +1,4 @@
+# Auth data: never commit user accounts or the token signing key
+users.db
+users.db-journal
+.secret_key
